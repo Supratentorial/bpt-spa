@@ -1,0 +1,19 @@
+@import "../../../assets/styles/colors";
+
+.tab-button {
+  background-color: $blue-grey-900;
+  width: auto;
+  padding: 10px 15px 5px;
+  text-transform: uppercase;
+  color: $blue-grey-100;
+  border-bottom: 5px transparent solid;
+  cursor: pointer;
+  &:hover{
+    border-bottom: 5px $brand-primary solid;
+  }
+  &.active{
+    border-bottom: 5px $brand-primary solid;
+
+  }
+
+}

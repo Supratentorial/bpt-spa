@@ -1,3 +1,21 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-sm-4 col-md-3 col-lg-1 hidden-xs-down logo">
+
+    </nav>
+    <nav class="col-sm-4 col-md-3 col-lg-1 hidden-xs-down side-nav">
+      <div routerLink="mcqs" routerLinkActive="active" class="link">
+        MCQs
+      </div>
+      <div routerLink="flashcards" routerLinkActive="active" class="link">
+        Flashcards
+      </div>
+      <div routerLink="bullets" routerLinkActive="active" class="link">
+        Bullets
+      </div>
+    </nav>
+    <main class="col-sm-8 col-md-9 col-lg-11 offset-sm-3 offset-md-3 offset-lg-1 pt-3">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="btn-circular mb-3" [inlineSVG]="'/assets/images/icon-left.svg'" routerLink="../"></div>
+<div *ngFor="let mcq of mcqs">
+<div class="card">
+  <div class="card-block">
+    <a (click)="viewSelectedMcq(mcq)">{{mcq.question}}</a>
+  </div>
+</div>
+</div>

@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div (click)="navigateBack()" class="btn-circular mb-3" [inlineSVG]="'/assets/images/icon-left.svg'"></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg">
+    <div class="card">
+      <div class="card-header">{{title}}</div>
+      <div class="card-block p-0">
+    <textarea #name="ngModel" name="question" required [(ngModel)]="currentMcq.question" class="no-border"
+              placeholder="Enter your question here..."></textarea>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-lg-6">
+        <div class="card mt-3">
+          <div class="card-block options-container">
+            <div *ngFor="let option of currentMcq?.options">
+              <div class="d-flex align-items-center option" [class.last-item]="last-option">
+                <input required minlength="3" [(ngModel)]="option.text" class="no-border"
+                       placeholder="Enter option here..."/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg">
+      Search for existing.
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg">
+    <div (click)="saveNewMcq()" class="btn-circular mt-3" [inlineSVG]="'/assets/images/icon-save.svg'"></div>
+  </div>
+</div>

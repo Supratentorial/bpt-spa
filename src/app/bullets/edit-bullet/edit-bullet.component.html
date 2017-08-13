@@ -1,0 +1,23 @@
+<div class="row mb-3">
+  <div class="col-lg">
+    <div class="btn-circular" (click)="navigateBack()" [inlineSVG]="'/assets/images/icon-left.svg'"></div>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-lg">
+    <div class="card">
+      <div class="card-header">
+        {{title}}
+      </div>
+      <div class="card-block">
+        <label class="form-control-label">Bullet</label>
+        <input class="form-control" [(ngModel)]="currentBullet.text"/>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg">
+    <div class="btn-circular" (click)="saveBullet()" [inlineSVG]="'/assets/images/icon-save.svg'"></div>
+  </div>
+</div>

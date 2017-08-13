@@ -1,0 +1,40 @@
+@import "colors";
+
+.side-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: transparent linear-gradient(to bottom, $blue-grey-900, $blue-grey-800);
+
+  .link {
+    user-select: none;
+    line-height: 50px;
+    padding-left: 15px;
+    color: $blue-grey-100;
+    font-size: 18px;
+    text-transform: uppercase;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.4s;
+    border-left: 5px transparent solid;
+    border-bottom: 1px $blue-grey-800 solid;
+    &:focus{
+      outline: none;
+    }
+    &:hover {
+      border-left: 5px white solid;
+      background: rgba(207,216,220 ,0.15);
+    }
+    &.active {
+      color: $brand-primary;
+      border-left: 5px $brand-primary solid;
+      background: rgba(207,216,220 ,0.15);
+    }
+  }
+}
+
