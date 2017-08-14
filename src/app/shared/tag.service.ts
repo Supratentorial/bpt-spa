@@ -1,7 +1,3 @@
-/**
- * Created by blake on 12/03/2017.
- */
-
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import {Injectable} from "@angular/core";
@@ -14,7 +10,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class TagService{
 
-  tagEndPoint: string = 'api/tags';
+  tagEndPoint: string = 'http://localhost:5000/api/tags';
 
   constructor(private http: Http){
 

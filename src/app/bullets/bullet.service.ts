@@ -6,7 +6,7 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class BulletService {
 
-  private bulletApiEndpoint = "api/bulletpages";
+  private bulletApiEndpoint = "http://localhost:5000/api/bulletpages";
 
   constructor(private http: Http) {
   }

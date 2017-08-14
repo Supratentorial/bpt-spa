@@ -7,7 +7,7 @@ import {Observable} from "../../../node_modules/rxjs/Observable";
 @Injectable()
 export class FlashcardService {
 
-  flashcardEndPoint: string = 'api/flashcards';
+  flashcardEndPoint: string = 'http://localhost:5000/api/flashcards';
   currentFlashcard : Flashcard;
 
   constructor(private http: Http) {

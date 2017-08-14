@@ -8,7 +8,7 @@ import {Observable} from "../../../node_modules/rxjs/Observable";
 @Injectable()
 export class McqService {
 
-  mcqEndPoint: string = 'api/mcqs';
+  mcqEndPoint: string = 'http://localhost:5000/api/mcqs';
   currentMcq : MultipleChoiceQuestion;
 
   constructor(private http: Http) {
