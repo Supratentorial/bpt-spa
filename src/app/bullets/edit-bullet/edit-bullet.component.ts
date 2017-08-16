@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
 import {BulletService} from '../bullet.service';
-import {Bullet} from '../models/Bullet';
+import {Bullet} from '../models/bullet';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -19,7 +19,7 @@ export class EditBulletComponent implements OnInit {
     status: 'active'
   };
 
-  private currentBulletPageId : number;
+  private currentBulletPageId: number;
 
   private currentRouteSub: any;
 
@@ -28,9 +28,9 @@ export class EditBulletComponent implements OnInit {
 
   ngOnInit() {
     this.currentRouteSub = this.activatedRoute.params.subscribe(params => {
-      let currentBulletId: number = +params['bulletId'];
+      const currentBulletId: number = +params['bulletId'];
       this.currentBulletPageId = +params['bulletPageId'];
-      if (currentBulletId != 0) {
+      if (currentBulletId !== 0) {
         this.bulletService.getBulletById(currentBulletId).subscribe((bullet) => this.currentBullet = bullet);
       }
     });

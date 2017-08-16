@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {McqService} from "../mcq.service";
-import {MultipleChoiceQuestion} from "../models/multiple-choice-question";
-import {Router} from "@angular/router";
+import {McqService} from '../mcq.service';
+import {MultipleChoiceQuestion} from '../models/multiple-choice-question';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-list-mcqs',
@@ -10,17 +10,17 @@ import {Router} from "@angular/router";
 })
 export class ListMcqsComponent implements OnInit {
 
-  mcqs : Array<MultipleChoiceQuestion> = [];
+  mcqs: Array<MultipleChoiceQuestion> = [];
 
-  constructor(private mcqService : McqService, private router: Router) { }
+  constructor(private mcqService: McqService, private router: Router) { }
 
   ngOnInit() {
-    this.mcqService.getMcqs().subscribe((mcqs : Array<MultipleChoiceQuestion>) => {
+    this.mcqService.getMcqs().subscribe((mcqs: Array<MultipleChoiceQuestion>) => {
       this.mcqs = mcqs;
     });
   }
 
-  viewSelectedMcq(mcq: MultipleChoiceQuestion){
+  viewSelectedMcq(mcq: MultipleChoiceQuestion) {
     this.mcqService.currentMcq = mcq;
     this.router.navigate(['mcqs/', mcq.id]);
   }

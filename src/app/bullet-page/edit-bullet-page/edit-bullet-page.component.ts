@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Location} from "@angular/common";
-import {BulletPage} from "../models/bullet-page";
-import {BulletPageService} from "../bullet-page.service";
-import {ActivatedRoute} from "@angular/router";
+import {Location} from '@angular/common';
+import {BulletPage} from '../../bullets/models/bullet-page';
+import {BulletPageService} from '../bullet-page.service';
+import {ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -11,10 +11,6 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./edit-bullet-page.component.scss']
 })
 export class EditBulletPageComponent implements OnInit {
-
-  constructor(private location: Location, private bulletPageService: BulletPageService, private route: ActivatedRoute) {
-  }
-
   title: string;
   activatedRouteSub: any;
 
@@ -24,16 +20,19 @@ export class EditBulletPageComponent implements OnInit {
     name: ''
   };
 
+  constructor(private location: Location, private bulletPageService: BulletPageService, private route: ActivatedRoute) {
+  }
+
   ngOnInit() {
     this.activatedRouteSub = this.route.params.subscribe(params => {
-      let bulletPageId = +params['bulletPageId'];
+      const bulletPageId = +params['bulletPageId'];
       if (bulletPageId === 0) {
-        this.title = "Add Bullet Page";
+        this.title = 'Add Bullet Page';
       } else {
         this.bulletPageService.getBulletPageById(bulletPageId).subscribe(
           bulletPage => this.bulletPage = bulletPage
         );
-        this.title = "Edit Bullet Page";
+        this.title = 'Edit Bullet Page';
       }
       console.log(this.title);
     });

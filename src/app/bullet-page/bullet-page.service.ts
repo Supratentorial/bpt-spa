@@ -1,15 +1,15 @@
-import {Injectable} from "@angular/core";
-import {Http, RequestOptions, Headers} from "@angular/http";
-import {BulletPage} from "./models/bullet-page";
-import {Observable} from "rxjs/Observable";
+import {Injectable} from '@angular/core';
+import {Http, RequestOptions, Headers} from '@angular/http';
+import {BulletPage} from '../bullets/models/bullet-page';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
-export class BulletPageService{
+export class BulletPageService {
 
-  bulletPagesEndPoint = "http://localhost:5000/api/bulletpages";
+  bulletPagesEndPoint = 'http://localhost:5000/api/bulletpages';
 
 
-  constructor(private http: Http){
+  constructor(private http: Http) {
 
   }
 
@@ -25,12 +25,12 @@ export class BulletPageService{
       .catch(this.handleError);
   }
 
-  saveBulletPage(bulletPage : BulletPage) {
+  saveBulletPage(bulletPage: BulletPage) {
     console.log('saveBulletPage() called');
-    let bodyString = JSON.stringify(bulletPage);
-    let headers = new Headers({'Content-Type': 'application/json'});
-    let options = new RequestOptions({headers: headers});
-    if(+bulletPage.id === 0){
+    const bodyString = JSON.stringify(bulletPage);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    const options = new RequestOptions({headers: headers});
+    if (+bulletPage.id === 0) {
       return this.http.post(this.bulletPagesEndPoint, bodyString, options)
         .map(this.mapResponse)
         .catch(this.handleError);
@@ -41,7 +41,7 @@ export class BulletPageService{
   }
 
   mapResponse(response: Response | any) {
-    let body = response.json();
+    const body = response.json();
     return body || [];
   }
 
@@ -49,8 +49,8 @@ export class BulletPageService{
     let errorMessage: string;
     if (response instanceof Response) {
       const body = response.json() || '';
-      //const error = body.error || JSON.stringify(body);
-      //errorMessage = `${error.status} - ${error.statusText || ''} ${error}`;
+      // const error = body.error || JSON.stringify(body);
+      // errorMessage = `${error.status} - ${error.statusText || ''} ${error}`;
     }
     console.log(errorMessage);
     return Observable.throw(errorMessage);

@@ -1,8 +1,8 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {MultipleChoiceQuestion} from "../models/multiple-choice-question";
-import {McqService} from "../mcq.service";
+import {MultipleChoiceQuestion} from '../models/multiple-choice-question';
+import {McqService} from '../mcq.service';
 import 'rxjs/add/operator/switchMap';
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-view-mcq',

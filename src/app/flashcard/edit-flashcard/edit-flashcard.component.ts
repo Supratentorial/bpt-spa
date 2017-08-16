@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FlashcardService} from "../flashcard.service";
-import {Flashcard} from "../flashcard";
-import {Location} from "@angular/common";
+import {FlashcardService} from '../flashcard.service';
+import {Flashcard} from '../flashcard';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-edit-flashcard',
@@ -12,7 +12,7 @@ export class EditFlashcardComponent implements OnInit {
 
   currentFlashcard: Flashcard = {
     id: 0,
-    question: ""
+    question: ''
   };
 
   constructor(private location: Location, private flashcardService: FlashcardService) {

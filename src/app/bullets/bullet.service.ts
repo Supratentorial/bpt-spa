@@ -1,33 +1,33 @@
 import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
-import {Bullet} from './models/Bullet';
+import {Bullet} from './models/bullet';
 import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class BulletService {
 
-  private bulletApiEndpoint = "http://localhost:5000/api/bulletpages";
+  private bulletApiEndpoint = 'http://localhost:5000/api/bulletpages';
 
   constructor(private http: Http) {
   }
 
   saveBullet(bullet: Bullet, bulletPageId: number) {
-    if(bullet.id != 0){
+    if (bullet.id !== 0) {
 
     }
-    return this.http.post(this.bulletApiEndpoint + "/" + bulletPageId.toString() + "/bullets", bullet);
+    return this.http.post(this.bulletApiEndpoint + '/' + bulletPageId.toString() + '/bullets', bullet);
   }
 
-  getBulletById(bulletId : number) {
-    return this.http.get(this.bulletApiEndpoint + "/bullets/" + bulletId.toString()).map(this.mapResponse).catch(this.handleError);
+  getBulletById(bulletId: number) {
+    return this.http.get(this.bulletApiEndpoint + '/bullets/' + bulletId.toString()).map(this.mapResponse).catch(this.handleError);
   }
 
-  getBulletsForPage(bulletPageId: number){
-    return this.http.get(this.bulletApiEndpoint + "/" + bulletPageId.toString() + "/bullets").map(this.mapResponse).catch(this.handleError);
+  getBulletsForPage(bulletPageId: number) {
+    return this.http.get(this.bulletApiEndpoint + '/' + bulletPageId.toString() + '/bullets').map(this.mapResponse).catch(this.handleError);
   }
 
   mapResponse(response: Response | any) {
-    let body = response.json();
+    const body = response.json();
     return body || [];
   }
 
@@ -35,8 +35,8 @@ export class BulletService {
     let errorMessage: string;
     if (response instanceof Response) {
       const body = response.json() || '';
-      //const error = body.error || JSON.stringify(body);
-      //errorMessage = `${error.status} - ${error.statusText || ''} ${error}`;
+      // const error = body.error || JSON.stringify(body);
+      // errorMessage = `${error.status} - ${error.statusText || ''} ${error}`;
     }
     console.log(errorMessage);
     return Observable.throw(errorMessage);

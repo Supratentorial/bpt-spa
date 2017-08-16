@@ -1,14 +1,14 @@
 <div class="row mb-3">
   <div class="col-lg">
-    <div class="btn-circular mr-3" [inlineSVG]="'/assets/images/icon-left.svg'" (click)="navigateBack()"></div>
+    <span class="page-title">{{currentBulletPage?.name}}</span>
     <div class="btn-circular mr-3" [inlineSVG]="'/assets/images/icon-add.svg'" routerLink="bullet/0/edit"></div>
     <div class="btn-circular" [inlineSVG]="'/assets/images/icon-edit.svg'"
          [routerLink]="['/bullets/bullet-pages', currentBulletPage?.id, 'edit']"></div>
   </div>
 </div>
-<div class="page-title">{{title}}</div>
-<div class="row mb-3">
-  <div class="col-lg">
-    <div class="bullet" *ngFor="let bullet of bullets">{{bullet.text}}</div>
+
+<div class="d-flex flex-column">
+  <div *ngFor="let bullet of bullets">
+    <app-bullet [bullet]="bullet"></app-bullet>
   </div>
 </div>

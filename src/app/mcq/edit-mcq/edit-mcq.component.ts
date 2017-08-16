@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {MultipleChoiceQuestion} from "../models/multiple-choice-question";
-import {McqService} from "../mcq.service";
-import {McqOption} from "../models/mcq-option";
-import {Location} from "@angular/common";
+import {MultipleChoiceQuestion} from '../models/multiple-choice-question';
+import {McqService} from '../mcq.service';
+import {McqOption} from '../models/mcq-option';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-edit-mcq',
@@ -11,11 +11,11 @@ import {Location} from "@angular/common";
 })
 export class EditMcqComponent implements OnInit {
 
-  title: string = "";
+  title = '';
 
   currentMcq: MultipleChoiceQuestion = {
     id: 0,
-    question: "",
+    question: '',
     options: []
   };
 
@@ -25,15 +25,15 @@ export class EditMcqComponent implements OnInit {
   ngOnInit() {
     let id: number;
 
-    this.title = "Add Multiple Choice Question";
+    this.title = 'Add Multiple Choice Question';
     this.createMcqOptions();
   }
 
   createMcqOptions() {
     for (let i = 0; i < 4; i++) {
-      let option: McqOption = {
+      const option: McqOption = {
         id: 0,
-        text: "",
+        text: '',
         isCorrect: i === 1
       };
       this.currentMcq.options.push(option);

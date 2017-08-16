@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
 import {BulletPage} from '../models/bullet-page';
 import {ActivatedRoute} from '@angular/router';
-import {BulletPageService} from '../bullet-page.service';
+import {BulletPageService} from '../../bullet-page/bullet-page.service';
 import {BulletService} from '../bullet.service';
-import {Bullet} from '../models/Bullet';
+import {Bullet} from '../models/bullet';
 
 @Component({
   selector: 'app-view-bullet-page',
@@ -14,10 +14,10 @@ import {Bullet} from '../models/Bullet';
 export class ViewBulletPageComponent implements OnInit {
 
   currentBulletPage: BulletPage;
-  bullets : Bullet[];
+  bullets: Bullet[];
   activatedRouteSub: any;
-
-  constructor(private location: Location, private route: ActivatedRoute, private bulletPageService: BulletPageService, private bulletService: BulletService) {
+  constructor(private location: Location, private route: ActivatedRoute, private bulletPageService: BulletPageService,
+              private bulletService: BulletService) {
   }
 
   ngOnInit() {

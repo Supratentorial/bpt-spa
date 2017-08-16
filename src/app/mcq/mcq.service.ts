@@ -1,15 +1,15 @@
-import {Injectable} from "@angular/core";
-import {MultipleChoiceQuestion} from "./models/multiple-choice-question";
+import {Injectable} from '@angular/core';
+import {MultipleChoiceQuestion} from './models/multiple-choice-question';
 import {Http, Headers, Response, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import {Observable} from "../../../node_modules/rxjs/Observable";
+import {Observable} from '../../../node_modules/rxjs/Observable';
 
 @Injectable()
 export class McqService {
 
-  mcqEndPoint: string = 'http://localhost:5000/api/mcqs';
-  currentMcq : MultipleChoiceQuestion;
+  mcqEndPoint = 'http://localhost:5000/api/mcqs';
+  currentMcq: MultipleChoiceQuestion;
 
   constructor(private http: Http) {
 
@@ -29,16 +29,16 @@ export class McqService {
 
   saveMcq(mcq: MultipleChoiceQuestion) {
     console.log('save mcq called');
-    let bodyString = JSON.stringify(mcq);
-    let headers = new Headers({'Content-Type': 'application/json'});
-    let options = new RequestOptions({headers: headers});
+    const bodyString = JSON.stringify(mcq);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    const options = new RequestOptions({headers: headers});
     return this.http.post(this.mcqEndPoint, bodyString, options)
       .map(this.mapResponse)
       .catch(this.handleError);
   }
 
   mapResponse(response: Response | any) {
-    let body = response.json();
+    const body = response.json();
     return body || [];
   }
 

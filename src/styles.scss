@@ -41,8 +41,9 @@
 @import "./assets/styles/_cards";
 @import "./assets/styles/_floating-controls";
 @import "./assets/styles/_text-area";
-@import "./assets/styles/_side-nav.scss";
+@import "./assets/styles/_side-nav";
+@import "./assets/styles/_headings";
 
 body{
-  background-color: $app-background-color;
+  background-color: $grey-100;
 }

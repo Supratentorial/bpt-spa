@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {BulletPage} from "../models/bullet-page";
-import {BulletPageService} from "../bullet-page.service";
+import {BulletPage} from '../../bullets/models/bullet-page';
+import {BulletPageService} from '../bullet-page.service';
 
 @Component({
   selector: 'app-list-bullet-pages',
@@ -11,7 +11,7 @@ export class ListBulletPagesComponent implements OnInit {
 
   bulletPages: Array<BulletPage> = [];
 
-  constructor(private bulletPageService : BulletPageService) {
+  constructor(private bulletPageService: BulletPageService) {
   }
 
   ngOnInit() {

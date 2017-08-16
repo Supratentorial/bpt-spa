@@ -1,0 +1,17 @@
+@import "../../../assets/styles/colors";
+
+.bullet{
+  display: inline-block;
+  border-radius:1em;
+  background-color: white;
+  padding: 5px 12px;
+  width: auto;
+  font-size: 1.1em;
+  border: 1px solid $blue-grey-100;
+  cursor: pointer;
+}
+
+.link{
+  font-size: 0.8em;
+  color: $grey-100;
+}

@@ -1,14 +1,14 @@
-import {Flashcard} from "./flashcard";
-import {Injectable} from "@angular/core";
+import {Flashcard} from './flashcard';
+import {Injectable} from '@angular/core';
 import {Http, Headers, Response, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import {Observable} from "../../../node_modules/rxjs/Observable";
+import {Observable} from '../../../node_modules/rxjs/Observable';
 @Injectable()
 export class FlashcardService {
 
-  flashcardEndPoint: string = 'http://localhost:5000/api/flashcards';
-  currentFlashcard : Flashcard;
+  flashcardEndPoint = 'http://localhost:5000/api/flashcards';
+  currentFlashcard: Flashcard;
 
   constructor(private http: Http) {
 
@@ -28,16 +28,16 @@ export class FlashcardService {
 
   saveFlashcard(flashcard: Flashcard) {
     console.log('save flashcard called');
-    let bodyString = JSON.stringify(flashcard);
-    let headers = new Headers({'Content-Type': 'application/json'});
-    let options = new RequestOptions({headers: headers});
+    const bodyString = JSON.stringify(flashcard);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    const options = new RequestOptions({headers: headers});
     return this.http.post(this.flashcardEndPoint, bodyString, options)
       .map(this.mapResponse)
       .catch(this.handleError);
   }
 
   mapResponse(response: Response | any) {
-    let body = response.json();
+    const body = response.json();
     return body || [];
   }
 
