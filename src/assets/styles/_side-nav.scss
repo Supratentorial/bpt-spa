@@ -9,7 +9,8 @@
   padding: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  background: transparent linear-gradient(to bottom, $blue-grey-900, $blue-grey-800);
+  background-color: white;
+  border-right: solid 1px $border-color;
 
   .link {
     user-select: none;

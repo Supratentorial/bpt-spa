@@ -1,14 +1,13 @@
-<div class="row mb-3">
+<div class="header row mb-3">
   <div class="col-lg">
-    <span class="page-title">{{currentBulletPage?.name}}</span>
-    <div class="btn-circular mr-3" [inlineSVG]="'/assets/images/icon-add.svg'" routerLink="bullet/0/edit"></div>
-    <div class="btn-circular" [inlineSVG]="'/assets/images/icon-edit.svg'"
-         [routerLink]="['/bullets/bullet-pages', currentBulletPage?.id, 'edit']"></div>
+    <h1>Bullets > {{currentBulletPage?.name}}</h1>
   </div>
 </div>
-
 <div class="d-flex flex-column">
   <div *ngFor="let bullet of bullets">
     <app-bullet [bullet]="bullet"></app-bullet>
   </div>
 </div>
+<div class="btn-circular mr-3" [inlineSVG]="'/assets/images/icon-add.svg'" routerLink="bullet/0/edit"></div>
+<div class="btn-circular" [inlineSVG]="'/assets/images/icon-edit.svg'"
+     [routerLink]="['/bullets/bullet-pages', currentBulletPage?.id, 'edit']"></div>

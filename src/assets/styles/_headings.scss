@@ -1,6 +1,14 @@
 @import "colors";
-
-.page-title {
-  font-size: 2em;
-  color: $blue-grey-900;
+.header{
+  background-color: $header-background-color;
+  margin-top: -15px;
+  padding: 10px;
+  font-family: Courier New, Courier, monospace;
+  border-bottom: solid 1px $border-color;
+  h1{
+    font-size: 2em;
+    color: $heading-font-color;
+    margin: 0;
+    padding: 0;
+  }
 }
