@@ -17,7 +17,8 @@ export class EditBulletPageComponent implements OnInit {
 
   bulletPage: BulletPage = {
     id: 0,
-    name: ''
+    name: '',
+    bulletCount: 0
   };
 
   constructor(private location: Location, private bulletPageService: BulletPageService, private route: ActivatedRoute) {

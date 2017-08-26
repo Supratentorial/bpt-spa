@@ -13,7 +13,6 @@ import {BulletsModule} from './bullets/bullets.module';
 import {FlashcardModule} from './flashcard/flashcard.module';
 import {McqModule} from './mcq/mcq.module';
 import {SettingsModule} from './settings/settings.module';
-import { BulletPageComponent } from './bullet-page/bullet-page/bullet-page.component';
 
 @NgModule({
   declarations: [
